@@ -21,12 +21,23 @@ import dk.mercantec.hot.service.ItemJDBCTemplate;
 
 @Controller
 public class ShoppingListController {
-
+	
+	/**
+	 * This loads the Database Connection and the ItemJDBCTemplate as an Object
+	 * 
+	 */
 	ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 	ItemJDBCTemplate itemJDBCTemplate = (ItemJDBCTemplate) context
 			.getBean("itemJDBCTemplate");
+	
+	/**
+	 * This will add all Items from the Database and then add them to a Model,
+	 * The model will be shown in the shoppingList.jsp view.
+	 * @param model
+	 * @return String
+	 */
 
-	@RequestMapping(value = "/shoppingList", method = RequestMethod.GET)
+	@RequestMapping(value = "/shoppingList", method = RequestMethod.GET) //This will trigger when the value matches and it's a GET request
 	public String getShoppingList(Model model) {
 
 		List<Item> items = itemJDBCTemplate.getShoppingListItems();
@@ -34,7 +45,7 @@ public class ShoppingListController {
 		return "shoppingList";
 	}
 
-	@RequestMapping(value = "/shoppingList", method = RequestMethod.POST)
+	@RequestMapping(value = "/shoppingList", method = RequestMethod.POST) //This will trigger when the value matches and it's a POST request
 	public String handleMyArrayVals(
 			@RequestParam(value = "bought", required = false) int[] checkedIds,
 			@RequestParam(value = "deleted", required = false) int[] deletedIds,

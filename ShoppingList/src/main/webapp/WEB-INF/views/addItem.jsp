@@ -15,7 +15,7 @@
 	| <a href="?language=da"><spring:message code="language.danish" /></a>
 </p>
 <p>
-	<a href="/hot/"><spring:message code="home.home" /></a>
+	<a href="/ShoppingList/"><spring:message code="home.home" /></a>
 </p>
 
 <style type="text/css">
