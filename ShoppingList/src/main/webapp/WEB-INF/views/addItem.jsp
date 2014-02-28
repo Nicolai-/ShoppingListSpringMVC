@@ -41,12 +41,12 @@
 			</tr>
 			<tr>
 				<td><spring:message code="shoppinglist.itemName" /></td>
-				<td><form:input path="name" cssClass="error" /></td>
+				<td><form:input path="name" /></td>
 				<td><form:errors path="name" cssClass="error" /></td>
 			</tr>
 			<tr>
 				<td><spring:message code="shoppinglist.price" /></td>
-				<td><form:input path="price" cssClass="error" /></td>
+				<td><form:input path="price" /></td>
 				<td><form:errors path="price" cssClass="error" /></td>
 			</tr>
 			<tr>
